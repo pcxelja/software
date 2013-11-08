@@ -1,0 +1,21 @@
+Nalezy podac nazwy dysków wg wzoru:
+
+dd if=/dev/dysk_zródlowy of=/dev/dysk_docelowy
+
+dd if=/dev/partycja1 of=/katalog/kopia_partycji1.img
+
+lub od razu stosujac kompresje:
+
+dd if=/dev/partycja1 | gzip > kopia_partycji1.gz
+
+Mozna tez przeniesc od razu, bez robienia kopii partycji:
+
+dd if=/dev/partycja1 of=/dev/partycja2
+
+Odzyskanie partycji nastepuje w ten sposób:
+
+gzip -dcv kopia_partycji1.gz | dd of=/dev/partycja2
+
+lub, gdy nie stosowalismy kompresji:
+
+dd if=/katalog/kopia_partycji1.img of=/dev/partycja2

@@ -1,0 +1,20 @@
+Nagrywanie filmów/zjęć.
+- raspivid - nagrywanie filmów
+- raspistill - zapisywanie zdjęć
+
+Przykładowe komendy
+- raspistill -o image.jpg - zapisanie obrazka jpeg
+- raspivid -o video.h264 - zapisanie 5-cio sekundowego filmiku
+- raspivid -o video.h264 -t 10000 - zapisanie 10-cio sekundowego filmiku
+- raspivid -o video.h264 -t 10000 -d - zapisanie 10-cio sekundowego filmiku w trybie demo
+- raspivid | less - pomoc
+- raspistill | less - pomoc
+
+Można też skorzystać z dodatkowych parametrów, m.in.:
+Kompresja jpg, 0-100: -q 100
+Typ pliku (jpg, bmp, gif, png), domyślnie jpg: -e png
+Timelapse/zdjęcie co x ms: -tl <ms> (np. -tl 10000 dla zdjęcia co 10 sekund)
+
+
+Raspberry Pi - wyłączenie diody na kamerze.
+Dodaj do pliku /boot/config.txt linijkę: disable_camera_led=1

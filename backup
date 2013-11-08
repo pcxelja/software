@@ -1,0 +1,165 @@
+#!/bin/bash
+################################
+echo "  --------------------------------------------" >> error.txt
+date >> error.txt
+echo "  ----------------------------------------------------------------------------------------"
+echo "	Archiwizacja danych "
+echo -e "	autor: Pawel Grygorowicz"
+echo -e " 	ver2.4 2013.07.28"
+echo "# ------------------------------------------- #"
+echo "# .................. Menu ................... #"
+echo "# ------------------------------------------- #"
+
+echo "...... Dysk HDD80GB ......"
+echo "	1. rdiff-backup HDD80GB"
+echo "# ------------------------------------------- #"
+echo "...... Dysk HDD500GB ......"
+echo "	2. rdiff-backup HDD500GB"
+echo "# ------------------------------------------- #"
+echo "...... NAS 192.168.0.2 ......"
+echo "	31. rdiff-backup home"
+echo "	32. rdiff-backup bash"
+echo "# ------------------------------------------- #"
+echo "	4. Gramps 2 Drobpox"
+echo "# ------------------------------------------- #"
+echo "Wybrales: " 
+read A;
+
+echo "# ------------------------------------------- #"
+
+
+#ncdu ~ #program do analizy zajmowanego miejsca na hdd
+#iperf -s #na serwerze
+#iperf -c IP_serwera
+#chattr - zabezpieczenie pliku/katalogu przed usunieciem
+#sudo chattr +i plik
+#sudo chattr -i plik
+#sudo chattr -R +i katalog
+#sudo chattr -R -i katalog
+date > error.txt
+
+case "$A" in
+	
+	"1")  
+	echo "#### HDD80GB rdiff-backup ####"
+	date >> /media/hdd80GB/backup/data.txt
+	rdiff-backup  ~/dane /media/hdd80GB/backup 2>> error.txt
+	rdiff-backup  ~/.gramps /media/hdd80GB/backup 2>> error.txt
+	rdiff-backup  ~/Dropbox /media/hdd80GB/backup 2>> error.txt
+	rdiff-backup  ~/Obrazy /media/hdd80GB/backup 2>> error.txt
+	cat error.txt
+	;;
+
+	"2")  	
+	echo "#### HDD500GB ####"
+	date >> /media/linux/backup/data.txt
+	rdiff-backup ~/dane /media/linux/backup/rdiff-backup/dane 2>> error.txt
+	rdiff-backup ~/.gramps /media/linux/backup/rdiff-backup/gramps 2>> error.txt
+	rdiff-backup ~/Dropbox /media/linux/backup/rdiff-backup/Dropbox 2>> error.txt
+	rdiff-backup ~/Obrazy /media/linux/backup/rdiff-backup/Obrazy 2>> error.txt
+	cat error.txt
+	;;
+	
+	"31")	
+	echo "#### 192.168.0.2 ####"
+	rdiff-backup ~/Dropbox pcxelja@192.168.0.2::rdiff/Dropbox 2>> error.txt
+	rdiff-backup ~/Obrazy pcxelja@192.168.0.2::rdiff/Obrazy 2>> error.txt
+	rdiff-backup ~/dane pcxelja@192.168.0.2::rdiff/dane 2>> error.txt
+	rdiff-backup ~/.gramps pcxelja@192.168.0.2::rdiff/gramps 2>> error.txt
+	cat error.txt
+	;;	
+	
+	"32")	
+	echo "#### 192.168.0.2 bash, Software ####"
+	rdiff-backup ~/Dropbox/bash pcxelja@192.168.0.2::bash 2>> error.txt
+	rdiff-backup ~/Dropbox/software pcxelja@192.168.0.2::software 2>> error.txt
+	cat error.txt
+	;;
+	
+	"4")
+	echo "#### gramps_2_Dropbox ####"
+	rdiff-backup  ~/.gramps ~/Dropbox/dane/gramps 2>> error.txt
+	cat error.txt
+	;;
+  *) echo "Bledna wartosc..."
+esac
+
+
+#	"21")  	
+#	echo "### HDD500GB ############################################" >> diff.txt
+#	date >> diff.txt
+#	diff -r ~/Obrazy /media/linux/backup/Obrazy >> diff.txt;;
+	
+#	"4")	
+#	rsync -avvhze ssh --delete ~/Dropbox/bash/hdd2hdd.sh pcxelja@192.168.0.2:backup;;
+	
+#	"6")	
+#	scp ~/Dropbox/bash/hdd2hdd.sh pcxelja@192.168.0.2:~/;;
+	
+#	"7")	
+#	rsync -avvhze --delete ~/Dropbox/bash ~/Publiczny/test/rsync/ #2>> error.txt
+#	cp -r ~/Dropbox/bash ~/Publiczny/test/scp/
+#	rdiff-backup ~/Dropbox/bash ~/Publiczny/test/rdiff-backup/ #2>> error.txt
+#	date > ~/Dropbox/bash/diff1.txt
+#	date > ~/Dropbox/bash/diff2.txt
+#	diff -r ~/Publiczny/test/scp/ ~/Publiczny/test/rsync/ >> diff1.txt #porownanie wersji
+#	diff -r ~/Publiczny/test/scp/ ~/Publiczny/test/rdiff-backup/ >> diff2.txt #porownanie wersji
+#	date > ~/Dropbox/bash/winik.txt
+#	diff ~/Dropbox/bash/diff1.txt ~/Dropbox/bash/diff2.txt >> winik.txt #porownanie wersji
+#	echo "	"
+#	echo "Winik polecenia diff"
+#	echo "	"
+#	cat ~/Dropbox/bash/winik.txt;;
+
+#rsync -avz /etc /media/hdd80GB/backup/ 2>> error.txt
+#rsync -avz ~/Dropbox/grampsdb/ ~/Dropbox/bash/zabawa 2>> error.txt
+#echo "Zamontowac folder? [t/n]"
+#read montuj
+#if [ "$montuj" = "t" ]; then
+#echo "."
+#curlftpfs ftp://pcxelja:jingiel@192.168.1.3 ftp 2>> error.txt
+#fi
+#cd /home/pcxelja/ftp
+#echo "Podaj nazwe arichwum..."
+#read nazwa
+#mkdir $nazwa
+#cd ..
+#cel=ftp/$nazwa
+####################################
+#echo 'katalog /home/pcxelja/pomiary'
+#tar cfjv pomiary.tar.bz2 /home/pcxelja/pomiary 2>> error.txt
+#cp pomiary.tar.bz2 $cel #2>> error.txt
+#rm pomiary.tar.bz2 #2>> error.txt
+###################################
+
+####  rdiff-backup  ####  
+
+#rdiff-backup $HOME/Dokumenty /media/Karciocha/Kopie/Dokumenty #Tworzenie kopii zapasowej katalogu $HOME/Dokumenty na dysku /media/Karciocha:
+#rdiff-backup --restore-as-of now /media/Karciocha/Kopie/Dokumenty ~/Dokumenty-przywrócone/ #Przywracanie danych: Z najnowszej kopii:
+#rdiff-backup --restore-as-of 1M /media/Karciocha/Kopie/Dokumenty ~/Dokumenty-przywrócone/ #Przywracanie danych: Sprzed miesiąca:
+#rdiff-backup --remove-older-than 1Y /media/Karciocha/Kopie/Dokumenty # Oczyszczanie dysku: Polecenie usunie kopie starsze niż rok.
+#rdiff-backup $HOME/Dokumenty/ użytkownik@serwer.pl::/Kopie/Dokumenty/ #Tworzenie kopi na zdalnym serwerze – rdiff-backup musi być zainstalowany na serwerze:
+
+#Kopiowanie plików na zdalny komputer
+#scp /ściezka/do/pliku/który/chcesz/wysłać użytkownik@serwer:~/ścieżka/docelowa
+#Zarówno wysyłany plik jak i ścieżka docelowa muszą być poprawne. Aby zapisać plik w podanym miejscu musisz mieć prawa do zapisu w danym katalogu.
+#scp ~/pliki/dokumenty/rozliczenie2011.doc lukasz@232.211.72.69:~/pliki/
+#Pobieranie plików ze zdalnego komputera
+#scp użytkownik@serwer:~/plik/źródłowy /katalog/docelowy
+#Wymagania identyczne jak w przypadku kopiowania na zdalny komputer.
+#scp lukasz@232.211.72.69:~/pliki/rozliczenie2010.doc ~/pliki/archiwum/
+#Analogicznie do poprzednich komend z małą różnicą - należy dodać parametr -r, aby scp wiedział, że ma kopiować rekurencyjnie.
+
+#Przy kopiowaniu wielu plików/katalogów lepiej podmontować zdalny katalog przez sshfs:
+#sshfs user@host:/zdalny/katalog zdalny | sshfs user@host:/ zdalny | sshfs user@host: zdalny
+
+#W takim przypadku, przydatne jest polecenie grep uruchomione z odpowiednimi parametrami:
+#grep -rl "szukana fraza" /ścieżka/do/katalogu
+#grep -rl "poziom izolacji" ~/studia/bazy_danych/
+#Wszystkie pliki zawierające frazę "poziom izolacji" zostaną wypisanie poniżej.
+#Dodatkowo można wykorzystać następujące parametry:
+#    -c - zliczenie ile razy dana fraza występuje,
+#    -i - ignorowanie wielkości liter,
+#    -n - wypisanie linii, w której zawiera się poszukiwana fraza,
+#    -v - zwróci wszystkie wyniki, które nie zawierają szukanej frazy,
+#    -x - zwróci wszystkie wyniki, które w pojedynczej linii zawierają dokładnie taką frazę. 

@@ -1,0 +1,60 @@
+echo "  ----------------------------------------------------------------------------------------"
+echo "	Porowanie metod wykonywania backupa danych "
+echo -e "	autor: Pawel Grygorowicz"
+echo -e " 	ver1.0 2013.07.09"
+echo "#  #"
+echo "# ------------------------------------------- #"
+echo "# 1. Generuj dane"
+echo "# 11. Zmodyfikuj plik"
+echo "# 12. Skasuj plik z danymi testowymi "
+echo "# 2. Wykonaj backup"
+echo "# 3. Porownaj wersje backupa"
+echo "# ------------------------------------------- #"
+echo "Wybrales: "
+
+read twojWybor;
+
+case "$twojWybor" in	
+	"1")  
+	mkdir dane_testowe
+	cd dane_testowe
+	date > dane.txt
+	ls >> dane.txt
+	;;
+	
+	"11")
+	cd dane_testowe
+	date >> dane.txt
+	;;
+	
+	"12")
+	cd dane_testowe
+	remove dane.txt
+	;;
+	
+	"2")  
+	rdiff-backup ~/Dropbox/software/dane_testowe ~/temp/rdiff_backup 
+	scp -r  ~/Dropbox/software/dane_testowe ~/temp/scp 
+	rsync -avvhze --delete ~/Dropbox/software/dane_testowe ~/temp/rsync 
+	;;
+	
+	"3")
+		
+	diff -r ~/Dropbox/software/dane_testowe ~/temp/rdiff_backup > diff_rdiff_backup.txt
+	diff -r ~/Dropbox/software/dane_testowe ~/temp/scp > diff_scp.txt
+	diff -r ~/Dropbox/software/dane_testowe ~/temp/rsync > diff_rsync.txt
+	
+	echo "wynik rdiff"
+	cat diff_rdiff_backup.txt
+	echo ""
+	echo "wynik scp"
+	cat diff_scp.txt
+	echo ""
+	echo "wynik rsync"
+	cat diff_rsync.txt
+	echo ""
+	;;
+
+
+    *) echo "Bledna wartosc..."
+esac
