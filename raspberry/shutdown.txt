@@ -1,0 +1,3 @@
+sudo shutdown -h 23:15 #o godzinie 23:15
+sudo shutdown -h 15 #za 15 minut
+sudo shutdown -c #anulowanie wczesniejszego polecenia
