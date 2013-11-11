@@ -6,5 +6,5 @@ sudo apt-get install vim
 sudo apt-get install ntpdate
 sudo apt-get install git
 sudo apt-get install motion
-
+sudo apt-get install htop`
 
