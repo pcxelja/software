@@ -7,4 +7,5 @@ sudo apt-get install ntpdate
 sudo apt-get install git
 sudo apt-get install motion
 sudo apt-get install htop`
+sudo apt-get install iptraf
 
