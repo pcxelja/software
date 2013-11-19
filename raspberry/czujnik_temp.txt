@@ -1,0 +1,42 @@
+Włączenie obsługi 1-wire
+Praktycznie wszystkie systemy maja już zainstalowane moduły dla protokołu 1-wire i obsługi termometrów po tym protokole. Aby sprawdzić czy moduły są zainstalowane możemy je ręcznie załadować
+
+sudo modprobe w1-gpio
+sudo modprobe w1-therm
+Jeśli nie otrzymaliśmy żadnych błędów to warto aby powyższe moduły ładowały się wraz ze startem systemu dodając do pliku /etc/modules poniższe linijki.
+
+w1-gpio
+w1-therm
+
+Odczytywanie informacji z czujników
+Odczyt stanów i wartości z magistrali 1-wire odbywa się za pomocą odczytów z plików. Listę podpietych urządzeń można odczytać np. za pomocą poleceń
+
+cd /sys/bus/w1/devices
+ls
+Po przejściu do katalogu sys/bus/w1/devices i wyświetleniu jego zawartości zobaczymy wszystkie podłączone urządzenia
+
+28-0000045478fb  28-000004f3843c  28-0000054d14bc  28-0000054d6df0
+28-000004f354e6  28-0000054cfeb2  28-0000054d52b8  w1_bus_master1
+gdzie 28-00000xxxxxx to ID urządzeń a w1_bus_master1 określa pierwszy i jedyny główny kontroler w naszej malinie.
+
+Możemy wyświetlić w łatwy sposób liczbę podłączonych czujników
+
+cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slave_count
+
+Możemy również wyświetlić listę ID podłączonych czujników
+
+cat /sys/bus/w1/devices/w1_bus_master1/w1_master_slaves
+28-0000054d6df0
+28-0000054d52b8
+28-000004f3843c
+28-0000054d14bc
+28-0000054cfeb2
+28-000004f354e6
+28-0000045478fb
+Aby odczytać wartości temperatur oraz inne dane przykładowo z pierwszego czujnika z naszej listy wydajemy polecenie
+
+cat /sys/bus/w1/devices/28-0000054d52b8/w1_slave
+ 
+78 01 4b 46 7f ff 08 10 51 : crc=51 YES
+78 01 4b 46 7f ff 08 10 51 t=23500
+Temperatura podana jest w wartości t=23500, którą musimy podzielić przez 1000, dzięki czemu otrzymujemy ją w bardziej przyjaznym formacie – 23,5 (°C). Wartość crc=51 YES określa czy transmisja była wykonana bez błędów – w naszym przypadku się to udało.
