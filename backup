@@ -46,7 +46,7 @@ case "$A" in
 	rdiff-backup  ~/dane /media/hdd80GB/backup 2>> error.txt
 	rdiff-backup  ~/.gramps /media/hdd80GB/backup 2>> error.txt
 	rdiff-backup  ~/Dropbox /media/hdd80GB/backup 2>> error.txt
-	rdiff-backup  ~/Obrazy /media/hdd80GB/backup 2>> error.txt
+	#rdiff-backup  ~/Obrazy /media/hdd80GB/backup 2>> error.txt
 	cat error.txt
 	;;
 
@@ -56,14 +56,14 @@ case "$A" in
 	rdiff-backup ~/dane /media/linux/backup/rdiff-backup/dane 2>> error.txt
 	rdiff-backup ~/.gramps /media/linux/backup/rdiff-backup/gramps 2>> error.txt
 	rdiff-backup ~/Dropbox /media/linux/backup/rdiff-backup/Dropbox 2>> error.txt
-	rdiff-backup ~/Obrazy /media/linux/backup/rdiff-backup/Obrazy 2>> error.txt
+	#rdiff-backup ~/Obrazy /media/linux/backup/rdiff-backup/Obrazy 2>> error.txt
 	cat error.txt
 	;;
 	
 	"31")	
 	echo "#### 192.168.0.2 ####"
 	rdiff-backup ~/Dropbox pcxelja@192.168.0.2::rdiff/Dropbox 2>> error.txt
-	rdiff-backup ~/Obrazy pcxelja@192.168.0.2::rdiff/Obrazy 2>> error.txt
+	#rdiff-backup ~/Obrazy pcxelja@192.168.0.2::rdiff/Obrazy 2>> error.txt
 	rdiff-backup ~/dane pcxelja@192.168.0.2::rdiff/dane 2>> error.txt
 	rdiff-backup ~/.gramps pcxelja@192.168.0.2::rdiff/gramps 2>> error.txt
 	cat error.txt
