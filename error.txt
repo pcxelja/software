@@ -1,1 +1,2 @@
-pią, 1 lis 2013, 17:45:36 CET
+sob, 7 gru 2013, 07:34:48 CET
+Fatal Error: Source directory /home/pcxelja/Obrazy does not exist
