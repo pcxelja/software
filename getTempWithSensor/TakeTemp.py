@@ -22,3 +22,5 @@ if __name__ == "__main__":
 	sensor = "/sys/bus/w1/devices/28-000004631ea4/w1_slave"
 	getTempWithSensor(sensor)
 
+	getTempWithSensor(sensor = "/sys/bus/w1/devices/28-000004b20553/w1_slave")
+
