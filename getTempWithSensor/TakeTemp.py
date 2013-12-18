@@ -1,12 +1,9 @@
 print "----  Get Temperature with sensor ----"
 print "autor: Pawel Grygorowicz"
-print "ver 1.0"
+print "ver 1.1"
 print "--------------------------------------"
 
-#sensor = ("/sys/bus/w1/devices/28-000004631ea4/w1_slave")
-
 def getTempWithSensor(sensor):
-
 	file  = open(sensor)
 	data = file.read()
 	file.close()
@@ -16,11 +13,15 @@ def getTempWithSensor(sensor):
 	temperature = temperature / 1000
 	print "Temperatura: "	
 	print temperature
+	return temperature
 
+def writeToFile(file, temperature):
+	file = open (file)
 
 if __name__ == "__main__":
-	sensor = "/sys/bus/w1/devices/28-000004631ea4/w1_slave"
-	getTempWithSensor(sensor)
+	w1 = "/sys/bus/w1/devices/28-000004631ea4/w1_slave"
+	getTempWithSensor(sensor = w1)
 
-	getTempWithSensor(sensor = "/sys/bus/w1/devices/28-000004b20553/w1_slave")
+	w2 = "/sys/bus/w1/devices/28-000004b20553/w1_slave"
+	getTempWithSensor(sensor = w2)
 
