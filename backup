@@ -67,7 +67,7 @@ case "$A" in
 	#rdiff-backup ~/Obrazy pcxelja@192.168.0.2::rdiff/Obrazy 2>> error.txt
 	rdiff-backup ~/dane pcxelja@192.168.0.2::rdiff/dane 2>> error.txt
 	rdiff-backup ~/.gramps pcxelja@192.168.0.2::rdiff/gramps 2>> error.txt	
-	rdiff-backup ~/.ssh pcxelja@192.168.0.2::rdiff-backup/ssh 2>> error.txt
+	rdiff-backup ~/.ssh pcxelja@192.168.0.2::rdiff/ssh 2>> error.txt
 	cat error.txt
 	;;	
 	
