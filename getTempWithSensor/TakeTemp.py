@@ -15,8 +15,8 @@ def getTempWithSensor(sensor, fileTxt):
 	print temperature
 	#return temperature
 	fileTxt = open(fileTxt, 'a')
-	fileTxt.write(str(temperature))
 	fileTxt.write(" ")
+	fileTxt.write(str(temperature))
 	fileTxt.close()
 
 def writeToFile(file, data):
