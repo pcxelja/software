@@ -1,4 +1,4 @@
-import datetime
+import time
 print "----  Get Temperature with sensor ----"
 print "autor: Pawel Grygorowicz"
 print "ver 1.2"
@@ -25,7 +25,8 @@ def writeToFile(file, data):
 	file.write(" ")
 	file.close()
 
-date = str(datetime.datetime.now())
+#date = str(datetime.datetime.now())
+date = str(time.strftime("%Y-%m-%d, %H:%M:%S"))
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@ def main(argv):
 	for line in in_file:
 		outline = process_single_line(line)
 	in_file.close()
+	print "Done ..."
 
 
 def process_single_line(line):
@@ -16,6 +17,8 @@ def process_single_line(line):
 	if "ERROR" in line:
 		print line
 	if "WARN" in line:
+		print line
+	if "ERR" in line:
 		print line
 
 def get_file_from_argv(argv):
