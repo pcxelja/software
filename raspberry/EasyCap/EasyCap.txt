@@ -1,0 +1,20 @@
+Najważniejsze opcje z motion.conf:
+
+videodevice /dev/video0  ‚-plik w /dev naszego EasyCap
+roundrobin_frames 25
+roundrobin_skip 2
+switchfilter off
+thread /etc/motion/thread1.conf
+thread /etc/motion/thread2.conf
+
+Najważniejsze opcje w thread1.conf:
+
+input 1  ‚-kanał drugi EasyCap
+text_left CAMERA 1
+target_dir /cam1
+
+Najważniejsze opcje w thread2.conf:
+
+input 2  ‚-kanał trzeci EasyCap
+text_left CAMERA 2
+target_dir /cam2

@@ -1,0 +1,13 @@
+#Wykonanie kopii karty SD:
+
+dd if=/dev/sdx | gzip > /home/pcxelja/rapsi.gz
+
+#Przywrocenie obrazu na karte SD
+
+gzip -dc /home/pcxelja/raspi.gz | dd of=/def/sdx
+
+#Tworzenie kopii bez kompresji
+dd if=/dev/sdx of=/home/pcxelja/raspi.gz
+
+#przywrocenie kopii
+dd if=/home/pcxelja/raspi.gz of=/def/sdx

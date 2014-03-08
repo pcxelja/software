@@ -6,5 +6,5 @@ git config --global color.interactive auto
 git config --global color.status auto
 #git config --global core.editor "mate -w"
 git checkout -b master
-git remote add origin master git@github.com:pcxelja/software.git
+git remote add master git@github.com:pcxelja/software.git
 
