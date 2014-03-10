@@ -13,17 +13,9 @@ def read_input(i):
 def write_output(i,stan):
 	pfio.digital_write(i,stan)
 	
-
-
-zakres = range(1,8)
+zakres = range(1,9)
 print zakres
 for i in zakres:
-	read_input(i)
-	print "Port nr: %d " %i
-	print "Stan portu: %d" %stan
-	write_output(i, stan = 2)
-	sleep(1)
-	read_input(i)
-	print "Port nr: %d " %i
-	print "Stan portu po zmianie stanu %d" %stan
+	stan = read_input(i)
+	print "Port nr: %d stan portu: %d " %(i, stan)
 	i = i+1
