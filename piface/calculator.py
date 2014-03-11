@@ -8,4 +8,9 @@ class CurrencyCalculator:
 
 	def setPoundExchangeRate(self, value):
 		self.pound_exchange_rate = value
-	
+
+	def eurosToPLN(self, ammount):
+		return self.euro_exchange_rate*ammount
+
+	def poundsToPLN(self, ammount):
+		return self.pound_exchange_rate*ammount

@@ -4,21 +4,32 @@ import unittest
 from calculator import CurrencyCalculator
 
 class TestCurrencyCalculator(unittest.TestCase):
-	def testCurrencyCalculatorExist(self):
-		calculator = CurrencyCalculator()
+	def setUp(self):
+		self.calculator = CurrencyCalculator()
 
 	def testCurrencyCalculatorHasEuroExchangeRate(self):
-		calculator = CurrencyCalculator()
-		assert calculator.euro_exchange_rate != None, "calculator euro_exchange_rate is None"
+		assert self.calculator.euro_exchange_rate != None, "calculator euro_exchange_rate is None"
 
 	def testCurrencyCalculatorHasPoundExchangeRate(self):
-		calculator = CurrencyCalculator()
-		assert calculator.pound_exchange_rate != None, "calculator pound_exchange_rate is None"
+		assert self.calculator.pound_exchange_rate != None, "calculator pound_exchange_rate is None"
 
 	def testCurrencyCalculatorSetEuroExchangeRate(self):
-		calculator = CurrencyCalculator()
-		calculator.setEuroExchangeRate(4.1)
-		assert calculator.euro_exchange_rate == 4.1, "calculator euro_exchange_rate did not set correclty"
+		self.calculator.setEuroExchangeRate(4.1)
+		assert self.calculator.euro_exchange_rate == 4.1, "calculator euro_exchange_rate did not set correclty"
+
+	def testCurrencyCalculatorSerEuroExchangeRate(self):
+		self.calculator.setPoundExchangeRate(4.6)
+		assert self.calculator.pound_exchange_rate == 4.6
+
+	def testCurrencyCalculatorPoundsToPLN(self):
+		self.calculator.setPoundExchangeRate(4.6)
+		assert self.calculator.poundsToPLN(1) == 4.6
+		assert self.calculator.poundsToPLN(2) == 9.2
+
+	def testCurrencyCalculatorEuroToPLN(self):
+		self.calculator.setEuroExchangeRate(4.1)
+		assert self.calculator.eurosToPLN(1) == 4.1
+		assert self.calculator.eurosToPLN(2) == 8.2
 
 if __name__ == "__main__":
 	unittest.main()
