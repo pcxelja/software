@@ -3,7 +3,7 @@ import piface.pfio as pfio
 
 pfio.init()
 
-class PiFacePort:
+class PiFace:
 	
 	def read_input(port):
 		#global stan
