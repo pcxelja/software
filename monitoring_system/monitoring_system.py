@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import piface.pfio as pfio
-from time import sleep
+import time
 import os
 
 pfio.init()
@@ -15,9 +15,9 @@ def write_output(i,stan):
 	pfio.digital_write(i,stan)
 	
 def takePhoto():
-	file_time = (str(time.strftime("%Y-%m-%d, %H-%M-%S")))+(".jpg")
-	os.system("raspistill -q 70 -o %s") %s
-	
+	file_time = str((time.strftime("%Y-%m-%d-%H-%M-%S")))+(".jpg")
+	start = "raspistill -q 70 -o " + file_time
+	os.system(start)
 	
 #raspistill -q 100 -tl <ms> -o nazwa.jpg	
 	
