@@ -10,6 +10,6 @@ def takePhoto(nic):
 	
 file_time = str((time.strftime("%Y-%m-%d-%H-%M-%S")))+(".jpg")
 
-start = "raspistill -q 70 -o " + file_time
+start = "raspistill -q 70 -w 1024 -h 768 -o " + file_time
 
 os.system(start)
