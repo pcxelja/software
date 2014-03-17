@@ -26,9 +26,10 @@ zakres = range(1,9)
 while(True):
 	for i in zakres:
 		stan = read_input(i)
-		if stan == 1:
+		if stan == 1 and i == 1:
 			print "!!! Alarm !!!"
 			write_output(1,1)
+			takePhoto()
 		print "Port nr: %d stan portu: %d " %(i, stan)
 		i = i+1
-		sleep(0.2)
+		time.sleep(0.2)
