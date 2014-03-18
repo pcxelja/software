@@ -23,10 +23,12 @@ def takePhoto():
 	
 zakres = range(1,9)
 
+write_output(1,1)
+
 while(True):
 	for i in zakres:
 		stan = read_input(i)
-		if stan == 1 and i == 1:
+		if stan == 1:
 			print "!!! Alarm !!!"
 			write_output(1,1)
 			takePhoto()
