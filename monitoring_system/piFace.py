@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import piface.pfio as pfio
+import sys
 
 pfio.init()
 

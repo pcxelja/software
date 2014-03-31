@@ -1,0 +1,16 @@
+desc_ca=Filtres i Reenviaments de Correu
+desc_cz.UTF-8=FiltrovÃ¡nÃ­ a pÅ™eposÃ­lÃ¡nÃ­ poÅ¡ty
+desc_cz=Filtrování a pøeposílání po¹ty
+webmin_noui=1
+desc_nl=Filter en Mail Doorsturen
+desc=Filter and Forward Mail
+category=mail
+usermin_depends=mailbox procmail forward spam
+webmin=1
+webmin_hidden=1
+longdesc=Create rules to filter and forward incoming email.
+version=1.580
+usermin=1
+desc_de=Filter und Mailweiterleitung
+webmin_depends=mailboxes procmail
+depends=1.580

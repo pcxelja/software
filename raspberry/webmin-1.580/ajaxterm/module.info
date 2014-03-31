@@ -1,0 +1,7 @@
+desc_no=Tekst-terminal
+desc_ca=Entrada en Mode Text
+version=1.580
+longdesc=Access the shell on your system without the need for a separate SSH client, using Ajaxterm
+desc=Text Login
+name=ajaxterm
+depends=1.580

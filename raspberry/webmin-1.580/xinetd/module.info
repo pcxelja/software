@@ -1,0 +1,10 @@
+desc_ca=Serveis de Xarxa
+version=1.580
+longdesc=Edit servers handled by Xinetd, a replacement for inetd.
+name=Xinetd
+desc_de=Netzwerk-Dienste
+desc_no=Nettverkstjenester
+desc=Network Services
+category=net
+depends=1.580
+risk=low medium high

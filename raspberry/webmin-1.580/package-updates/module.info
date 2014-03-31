@@ -1,0 +1,10 @@
+desc_ca=Actualitzacions de Paquets de Programes
+version=1.580
+longdesc=Displays available package updates from YUM, APT or other update systems
+desc_no=Programpakker - oppdateringer
+os_support=redhat-linux debian-linux mandrake-linux/10.2-* solaris
+desc=Software Package Updates
+desc_nl=Software pakketten Update
+desc_ru.UTF-8=Обновление программных пакетов
+category=system
+depends=software cron mailboxes 1.580

@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Garage Operator</title>
+</head>
+
+
+<?php
+if (isset($_POST['OPEN']))
+{
+	exec("python ~/pi/github/monitoring_system/piFace_write.py");
+}
+
+?>
+
+
+<form method="post">
+<button name="OPEN"> Door</button><br>
+
+
+
+</form>
+</html>

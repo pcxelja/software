@@ -1,0 +1,9 @@
+desc_ca=Serveis i Protocols de Xarxa
+version=1.580
+longdesc=Edit services in /etc/inetd.conf, /etc/services and /etc/rpc.
+os_support=solaris *-linux hpux freebsd unixware openserver osf1 macos openbsd netbsd irix
+desc_de=Netzwerk-Dienste und Protokolle
+desc=Network Services and Protocols
+category=net
+risk=low medium high
+depends=1.580

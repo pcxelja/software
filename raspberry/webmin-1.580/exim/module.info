@@ -1,0 +1,8 @@
+desc_ca=Servidor de Correu Exim
+version=1.580
+name=Exim Mail Server
+desc=Exim Mailserver
+desc_nl=Exim Mailserver
+category=servers
+hidden=1
+depends=1.580

@@ -1,0 +1,16 @@
+desc_ca=Servidor OpenSLP
+desc_cz.UTF-8=OpenSLP server
+library=slp-lib.pl
+desc_ru_RU=Ñåðâåð OpenSLP
+desc_cz=OpenSLP server
+desc_ms=Pelayan OpenSLP
+desc_nl=OpenSLP Server
+desc=OpenSLP Server
+category=servers
+longdesc=Configure the service location protocol server.
+version=1.580
+name=OpenSLP
+desc_ru_SU=óÅÒ×ÅÒ OpenSLP
+os_support=!windows
+desc_ru.UTF-8=Ð¡ÐµÑ€Ð²ÐµÑ€ OpenSLP
+depends=1.580

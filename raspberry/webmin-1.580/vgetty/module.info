@@ -1,0 +1,17 @@
+desc_ca=Servidor de Correu de Veu
+desc_cz.UTF-8=Voicemail server
+desc_hu.UTF-8=HangÃ¼zenet szerver
+desc_es=Vgetty - Contestador Autom&#225;tico
+desc_ru_RU=Ñåğâåğ ãîëîñîâîé ïî÷òû
+desc_cz=Voicemail server
+desc_nl=Voicemail Server
+desc=Voicemail Server
+category=hardware
+desc_hu=Hangüzenet szerver
+version=1.580
+longdesc=Set up your system as an answering machine using vgetty
+name=Vgetty
+desc_ru_SU=óÅÒ×ÅÒ ÇÏÌÏÓÏ×ÏÊ ĞÏŞÔÙ
+os_support=*-linux
+desc_ru.UTF-8=Ğ¡ĞµÑ€Ğ²ĞµÑ€ Ğ³Ğ¾Ğ»Ğ¾ÑĞ¾Ğ²Ğ¾Ğ¹ Ğ¿Ğ¾Ñ‡Ñ‚Ñ‹
+depends=inittab 1.580
