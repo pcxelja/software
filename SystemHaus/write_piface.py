@@ -13,8 +13,8 @@ def read_input(i):
 '''
 
 def main(argv):
-	port = argv[1]
-	stan = argv[2]
+	port = int(argv[1])
+	stan = int(argv[2])
 	pfio.digital_write(port,stan)
 
 def print_usage():
