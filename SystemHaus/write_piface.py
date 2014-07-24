@@ -14,7 +14,11 @@ def read_input(i):
 
 def main(argv):
 	port = int(argv[1])
+		if port > 9:
+			print 'No correct value PORT: %d' %port
 	stan = int(argv[2])
+		if stan > 2:
+			print 'No correct value STAN %d' %stan
 	pfio.digital_write(port,stan)
 
 def print_usage():
@@ -33,4 +37,5 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print_usage()
     else:
+        if 
         main(sys.argv)
