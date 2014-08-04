@@ -52,12 +52,12 @@ case "$A" in
 
 	"2")  	
 	echo "#### HDD500GB ####"
-	date >> /media/linux/backup/data.txt
-	rdiff-backup ~/dane /media/linux/backup/rdiff-backup/dane 2>> error.txt
-	rdiff-backup ~/.gramps /media/linux/backup/rdiff-backup/gramps 2>> error.txt
-	rdiff-backup ~/Dropbox /media/linux/backup/rdiff-backup/Dropbox 2>> error.txt
+	date >> /media/pcxelja/linux/backup/data.txt
+	rdiff-backup ~/dane /media/pcxelja/linux/backup/rdiff-backup/dane 2>> error.txt
+	rdiff-backup ~/.gramps /media/pcxelja/linux/backup/rdiff-backup/gramps 2>> error.txt
+	rdiff-backup ~/Dropbox /media/pcxelja/linux/backup/rdiff-backup/Dropbox 2>> error.txt
 	#rdiff-backup ~/Obrazy /media/linux/backup/rdiff-backup/Obrazy 2>> error.txt
-	rdiff-backup ~/.ssh /media/linux/backup/rdiff-backup/ssh 2>> error.txt
+	rdiff-backup ~/.ssh /media/pcxelja/linux/backup/rdiff-backup/ssh 2>> error.txt
 	cat error.txt
 	;;
 	
