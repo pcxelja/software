@@ -15,6 +15,7 @@ echo "	1. rdiff-backup HDD80GB"
 echo "# ------------------------------------------- #"
 echo "...... Dysk HDD500GB ......"
 echo "	2. rdiff-backup HDD500GB"
+echo "	21. rdiff-backup home"
 echo "# ------------------------------------------- #"
 echo "...... NAS 192.168.0.2 ......"
 echo "	31. rdiff-backup home"
@@ -58,6 +59,13 @@ case "$A" in
 	rdiff-backup ~/Dropbox /media/pcxelja/linux/backup/rdiff-backup/Dropbox 2>> error.txt
 	#rdiff-backup ~/Obrazy /media/linux/backup/rdiff-backup/Obrazy 2>> error.txt
 	rdiff-backup ~/.ssh /media/pcxelja/linux/backup/rdiff-backup/ssh 2>> error.txt
+	cat error.txt
+	;;
+	
+	"21")  	
+	echo "#### home -> HDD500GB ####"
+	date >> /media/pcxelja/linux/backup/data.txt
+	rdiff-backup ~ /media/pcxelja/linux/backup/rdiff-backup/home 2>> error.txt
 	cat error.txt
 	;;
 	
