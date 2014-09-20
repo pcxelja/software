@@ -1,0 +1,12 @@
+chmod
+4 - read
+2 - write
+1 - x
+
+wc - ilosc bajtow, lini, zlow w pliku
+cmp - porownanie plikow lub zakresow bajtow
+du - ilosc zajmowanego miejsca przez katalog
+arch - informacja o sprzecie
+uname - info o systemie
+finger - np finger username - pokazuje info o username, miejsce wykorzystywane, kiedy zalogowal sie itp
+

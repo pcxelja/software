@@ -1,0 +1,9 @@
+śro, 20 sie 2014, 18:21:00 CEST
+śro, 20 sie 2014, 18:21:15 CEST
+Tylko w /home/pcxelja/temp: Complete.py
+Tylko w /home/pcxelja/temp: CopyLogsToBurak.py
+Tylko w /home/pcxelja/temp: CreateFakeXml.xml
+Tylko w /home/pcxelja/temp: Logs.py
+Tylko w /home/pcxelja/temp: PrepareFiles.py
+Tylko w /home/pcxelja/temp: StopOamAndCCS.py
+Tylko w /home/pcxelja/temp2: temp
